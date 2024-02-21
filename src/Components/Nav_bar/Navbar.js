@@ -10,13 +10,21 @@ function Navbar() {
   const handleLoginNavigation = () => {
     navigate("/Login");
   };
+  const handleSignupNavigation = () => {
+    navigate("/Signup");
+  };
+  const handleServiceProvider = () => {
+    navigate("/ServiceProviderSignup");
+  };
   return (
     <div className="header">
-      <Link to="#default" className="logo">
+      <Link to="/" className="logo">
         HandyPro
       </Link>
       <div className="header-right">
+        {/* 
         <Link to="/">Home</Link>
+        */}
         <Link
           to="Service"
           className="subnavbtn"
@@ -82,10 +90,16 @@ function Navbar() {
           </form>
         </div>
  */}
-        <Link className="active" to="/ServiceProvider">
+        <Link
+          className="active"
+          to="/ServiceProviderSignup"
+          onClick={() => handleServiceProvider()}
+        >
           Join us service provider
         </Link>
-        <Link to="/Singup">Sign Up</Link>
+        <Link to="/Signup" onClick={() => handleSignupNavigation()}>
+          Sign Up
+        </Link>
 
         <Link to="/Login" onClick={() => handleLoginNavigation()}>
           Login
