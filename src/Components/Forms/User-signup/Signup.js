@@ -1,31 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Signup.css";
 
 function SignUpForm() {
   return (
-    <div className="form-container" style={{ marginTop: "10em" }}>
-      <h2 style={{ textAlign: "center" }}>Create your account</h2>
+    <div
+      className="form-container"
+      style={{ justifyContent: "center", marginTop: "6em" }}
+    >
+      <h2 style={{ textAlign: "center" }}>Create Account</h2>
       <form>
         <input
           type="text"
           name="first_name"
           className="form-input"
-          placeholder="First name"
+          placeholder="Full name"
           required
         />
         <input
-          type="text"
+          type="email"
           name="last_name"
           className="form-input"
-          placeholder="Last name"
+          placeholder="Email"
           required
         />
 
         <input
-          type="email"
+          type="number"
           name="email"
           className="form-input"
-          placeholder="Email"
+          placeholder="Number"
           required
         />
 
