@@ -4,27 +4,40 @@ function Home() {
   return (
     <div className="contianer">
       <div className="site-details">
-        <div
-          className="message-to-users"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: "8em",
-            fontSize: "17px",
-          }}
-        >
-          <p className="note" style={{ wordWrap: "break-word" }}>
-            Are you looking for a reliable service provider for your home
-            repairs, maintenance, or improvement? Look no further! Our platform
-            is your go-to place for finding skilled professionals who can get
-            the job done.
-          </p>
+        <div className="website-banner">
+          <img
+            src="https://cdn.dribbble.com/userupload/6144946/file/original-de8e04dae3201773b66a1c2403c951ff.png?resize=1024x535"
+            alt="banner"
+            style={{ width: "100%" }}
+          />
+          {/*
+          <div
+            className="message-to-users"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginTop: "8em",
+              fontSize: "17px",
+            }}
+          >
+            <p className="note" style={{ wordWrap: "break-word" }}>
+              Are you looking for a reliable service provider for your home
+              repairs, maintenance, or improvement? Look no further! Our
+              platform is your go-to place for finding skilled professionals who
+              can get the job done.
+            </p>
+          </div>
+           */}
         </div>
 
         <div style={{ marginTop: "2em", padding: "15px" }}></div>
-        <p style={{ textAlign: "center" }}>Find service provider</p>
+        <p
+          style={{ textAlign: "center", fontFamily: "Sofia", fontSize: "2em" }}
+        >
+          Find service provider
+        </p>
         <div className="search-provider" action="/action_page.php">
           <input
             type="text"
