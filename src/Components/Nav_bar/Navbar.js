@@ -25,17 +25,14 @@ function Navbar() {
         {/* 
         <Link to="/">Home</Link>
         */}
-        <Link
-          to="Service"
-          className="subnavbtn"
-          onClick={() =>
-            (document.getElementById("id01").style.display = "block")
-          }
-          style={{ width: "auto" }}
-        >
-          Service <i className="fa fa-caret-down"></i>
+        <Link to="/Service" className="subnavbtn" style={{ width: "auto" }}>
+          Service
         </Link>
         {/*
+        <i className="fa fa-caret-down"></i>
+        onClick={() =>
+            (document.getElementById("id01").style.display = "block")
+          }
         <div id="id01" className="modal">
           <span
             onClick={() =>
@@ -89,10 +86,19 @@ function Navbar() {
             </div>
           </form>
         </div>
- */}
+
         <Link
           className="active"
           to="/ServiceProviderSignup"
+          onClick={() => handleServiceProvider()}
+        >
+        
+          Join us service provider
+        </Link>
+         */}
+        <Link
+          className="active"
+          to="/Provider"
           onClick={() => handleServiceProvider()}
         >
           Join us service provider
