@@ -78,11 +78,12 @@ body {
 */
 
 .forms-continer {
-  margin-top: 10em;
+  margin-top: 8em;
   display: flex;
   justify-content: center;
   gap: 5em;
 }
+
 .login-forms input {
   width: 100%;
   padding: 10px 10px;
@@ -137,7 +138,7 @@ body {
 @media screen and (max-width: 500px) {
   .forms-continer {
     flex-direction: column-reverse;
-    margin-top: 20em;
+    margin-top: 3em;
     gap: 2em;
   }
   .login-image {
@@ -152,7 +153,7 @@ body {
 @media screen and (max-width: 650px) {
   .forms-continer {
     flex-direction: column-reverse;
-    margin-top: 20em;
+    margin-top: 3em;
     gap: 2em;
   }
 
@@ -166,7 +167,7 @@ body {
 @media (max-width: 767px) {
   .forms-continer {
     flex-direction: column-reverse;
-    margin-top: 20em;
+    margin-top: 3em;
     gap: 2em;
   }
   .login-image img {
@@ -179,7 +180,7 @@ body {
 @media screen and (max-width: 300px) {
   .forms-continer {
     flex-direction: column-reverse;
-    margin-top: 20em;
+    margin-top: 3em;
     gap: 2em;
   }
   .login-image img {

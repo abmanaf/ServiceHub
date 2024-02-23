@@ -9,23 +9,37 @@ body {
 
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
   padding: 20px 10px;
-  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensure it appears above other content */
+  z-index: 1000;
+  /*
+  position: fixed;
+  Ensure it appears above other content */
 }
 
 .header a {
   float: left;
   color: black;
   text-align: center;
-  padding: 12px;
+  padding: 8px;
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
+  margin-right: 10px; /* Add margin-right to create a gap between links */
+}
+.header a:not(.active, .logo) {
+  border: 1px solid rgb(138, 131, 131);
+}
+
+/* Add a larger margin-right to the last link to separate it from others */
+.header .header-right a:last-child {
+  margin-right: 20px;
+}
+
+.contianer .site-details .website-banner img {
+  height: 25em;
 }
 .message-to-users {
   width: 31em;
@@ -44,13 +58,13 @@ body {
 .search-provider button {
   padding: 10px 10px;
 }
-.header a:hover {
+.header a:hover:not(.logo, .active) {
   background-color: #ddd;
   color: black;
 }
 
 .header a.active {
-  background-color: dodgerblue;
+  background-color: #112943;
   color: white;
 }
 
@@ -81,6 +95,12 @@ body {
   }
   .note {
     margin-top: 15em;
+  }
+  .contianer .site-details .website-banner img {
+    height: 15em;
+  }
+  .header a:not(.active, .logo) {
+    border: none;
   }
 }
 /*
@@ -157,6 +177,12 @@ body {
   }
   .message-to-users {
     width: 20em;
+  }
+  .contianer .site-details .website-banner img {
+    height: 15em;
+  }
+  .header a:not(.active, .logo) {
+    border: none;
   }
 }
 
@@ -260,6 +286,12 @@ body {
   .note {
     margin-top: 6em;
   }
+  .contianer .site-details .website-banner img {
+    height: 15em;
+  }
+  .header a:not(.active, .logo) {
+    border: none;
+  }
 }
 /* Full-width input fields*/
 .search-provider input[type="text"] {
@@ -281,7 +313,7 @@ input[type="password"]:focus {
 /* Set a style for all buttons*/
 .search-provider button {
   width: 50px;
-  background-color: dodgerblue;
+  background-color: #112943;
   color: white;
   border: none;
   cursor: pointer;
@@ -377,6 +409,12 @@ hr {
   .note {
     margin-top: 25em;
   }
+  .contianer .site-details .website-banner img {
+    height: 15em;
+  }
+  .header a:not(.active, .logo) {
+    border: none;
+  }
 }
 .navbar {
   width: 100%;
@@ -393,14 +431,14 @@ hr {
   text-align: center;
 }
 
-.navbar a:hover {
+.navbar a:hover:not(.logo) {
   background-color: #7d7878;
 }
-
+/*
 .navbar a.active {
   background-color: #04aa6d;
 }
-
+*/
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;
@@ -414,6 +452,12 @@ hr {
   }
   .note {
     margin-top: 15em;
+  }
+  .contianer .site-details .website-banner img {
+    height: 15em;
+  }
+  .header a:not(.active, .logo) {
+    border: none;
   }
 }
 .space-between-service-and-footer {
