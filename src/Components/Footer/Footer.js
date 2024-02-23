@@ -30,7 +30,7 @@ function Footer() {
             <a href="#">
               <i className="fa fa-facebook"></i>
             </a>
-            <a href="#">
+            <a href="https://twitter.com/home">
               <i className="fa fa-twitter"></i>
             </a>
             <a href="#">
