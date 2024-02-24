@@ -61,14 +61,9 @@ function Home() {
         <p class="">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           pharetra rhoncus suscipit. Integer eget leo pretium, vulputate velit
-          sit amet, aliquam est. Pellentesque a malesuada orci, at rhoncus enim.
-          Suspendisse at dictum arcu. Etiam tempus varius sem, at pretium augue
-          fringilla et. Curabitur tempus sollicitudin congue. Aliquam in
-          malesuada eros. Nunc ullamcorper sagittis augue a ornare. Aenean
-          faucibus finibus sollicitudin. Nullam interdum tellus mauris, et
-          mattis libero accumsan vitae. Suspendisse et dui accumsan, lacinia leo
-          in, aliquam felis. Aliquam tortor tellus, egestas tristique orci at,
-          rutrum lacinia orci.
+          sit amet, aliquam est Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Donec pharetra rhoncus suscipit. Integer eget leo
+          pretium, vulputate velit sit amet, aliquam est
         </p>
       </div>
       <div className="row">
@@ -81,16 +76,15 @@ function Home() {
             />
             <div className="container">
               <h2>Plumber</h2>
-              <p className="title">CEO & Founder</p>
+              <p className="title">Fixing Leaks & Pipes</p>
               <p>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                pharetra rhoncus suscipit. Integer eget leo pretium, vulputate
-                velit sit amet, aliquam est
+                Our plumbers are prepared to efficiently address any plumbing
+                problems, from leak repairs to unclogging drains.
               </p>
             </div>
           </div>
         </div>
+        <br />
         <div className="col-sm">
           <div className="card">
             <img
@@ -100,16 +94,16 @@ function Home() {
             />
             <div className="container">
               <h2>Painter</h2>
-              <p className="title">Designer</p>
+              <p className="title">Transforming Spaces</p>
               <p>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                pharetra rhoncus suscipit. Integer eget leo pretium, vulputate
-                velit sit amet, aliquam est
+                With their artistic brushstrokes and meticulous attention to
+                detail, our talented painters will breathe new life into your
+                walls.
               </p>
             </div>
           </div>
         </div>
+        <br />
         <div className="col-sm">
           <div className="card">
             <img
@@ -119,17 +113,17 @@ function Home() {
             />
             <div className="container">
               <h2>Electrician</h2>
-              <p className="title">Art Director</p>
+              <p className="title">Wiring & Installations</p>
               <p>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                pharetra rhoncus suscipit. Integer eget leo pretium, vulputate
-                velit sit amet, aliquam est
+                Our electricians provide answers for all of your electrical
+                demands while making sure your house is wired safely and
+                effectively.
               </p>
             </div>
           </div>
         </div>
       </div>
+      <br />
       <div className="row">
         <div className="col-sm">
           <div className="card">
@@ -140,17 +134,15 @@ function Home() {
             />
             <div className="container">
               <h2>Home Cleaner</h2>
-              <p className="title">CEO & Founder</p>
+              <p className="title">Spotless Cleaning</p>
               <p>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                pharetra rhoncus suscipit. Integer eget leo pretium, vulputate
-                velit sit amet, aliquam est
+                Remain calm and comfortable as our professional cleaners turn
+                your house into a tidy and revitalizing environment.
               </p>
             </div>
           </div>
         </div>
-
+        <br />
         <div className="col-sm">
           <div className="card">
             <img
@@ -159,18 +151,16 @@ function Home() {
               style={{ width: "100%" }}
             />
             <div className="container">
-              <h2>Electronics</h2>
-              <p className="title">Art Director</p>
+              <h2>Electronics Technician</h2>
+              <p className="title">Repair & Maintenance</p>
               <p>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                pharetra rhoncus suscipit. Integer eget leo pretium, vulputate
-                velit sit amet, aliquam est
+                Trust our skilled experts to repair any issues with your
+                electrical devices, ensuring they function properly.
               </p>
             </div>
           </div>
         </div>
-
+        <br />
         <div className="col-sm">
           <div className="card">
             <img
@@ -180,12 +170,10 @@ function Home() {
             />
             <div className="container">
               <h2>Mason/Builder</h2>
-              <p className="title">Designer</p>
+              <p className="title">Constructing Dreams</p>
               <p>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                pharetra rhoncus suscipit. Integer eget leo pretium, vulputate
-                velit sit amet, aliquam est
+                Make your fantasy space a reality with the help of our
+                knowledgeable masons and builders.
               </p>
             </div>
           </div>
