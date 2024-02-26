@@ -7,6 +7,8 @@ import Login from "./Components/Forms/User_login/Login";
 import Signup from "./Components/Forms/User-signup/Signup";
 import Provider from "./Components/Forms/Service-provider/Provider";
 import Service from "./Components/Servicce/Service";
+import Contact from "./Components/Contact/Contact";
+import About from "./Components/About/About";
 import Data from "./Databas/Data";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
@@ -44,6 +46,8 @@ function App() {
           element={<Data storedUsers={storedUsers} userDetails={userDetails} />}
         />
         <Route path="/Login" element={<Login />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>
