@@ -7,6 +7,7 @@ function SignUpForm() {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [profession, setProfession] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [userDetails, setUserDetails] = useState([]);
@@ -18,12 +19,27 @@ function SignUpForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      return;
+    }
+    if (password === username) {
+      alert("Password cannot be the same as user name.");
+      return;
+    }
+
+    // Check if password is same as email
+    if (password === email) {
+      alert("Password cannot be the same as email.");
+      return;
+    }
 
     // Prepare user details object
     const user = {
       name,
       username,
       email,
+      profession,
       phone,
       password,
       avatar,
@@ -37,6 +53,7 @@ function SignUpForm() {
     setName("");
     setUsername("");
     setEmail("");
+    setProfession("");
     setPhone("");
     setPassword("");
     setAvatar(null);
@@ -126,6 +143,15 @@ function SignUpForm() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
+            type="Profession"
+            name="Profession"
+            className="form-input"
+            placeholder="Profession"
+            required
+            value={profession}
+            onChange={(e) => setProfession(e.target.value)}
+          />
+          <input
             type="number"
             name="phone"
             className="form-input"
@@ -149,7 +175,7 @@ function SignUpForm() {
           </p>
           <ul style={{ fontSize: "14px", color: "#777777" }}>
             <li>Be at least 6 characters long</li>
-            <li>Not be the same as your name or email</li>
+            <li>Not be the same as your username or email</li>
           </ul>
           <button type="submit" className="form-button">
             Join the community

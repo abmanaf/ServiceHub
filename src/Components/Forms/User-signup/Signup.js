@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Signup.css";
 
 function SignUpForm() {
@@ -10,10 +10,21 @@ function SignUpForm() {
   const [password, setPassword] = useState("");
   const [storedUsers, setStoredUser] = useState([]);
 
-  const navigate = useNavigate();
-
   const hanldeUserSignup = (e) => {
     e.preventDefault();
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      return;
+    }
+    if (password === userName) {
+      alert("Password cannot be the same as user name.");
+      return;
+    }
+    // Check if password is same as email
+    if (password === email) {
+      alert("Password cannot be the same as email.");
+      return;
+    }
 
     const newUser = {
       name,
@@ -27,7 +38,7 @@ function SignUpForm() {
     setStoredUser([...storedUsers, newUser]);
 
     // Save to local storage
-    localStorage.setItem("users", JSON.stringify([...storedUsers, newUser]));
+    //localStorage.setItem("users", JSON.stringify([...storedUsers, newUser]));
 
     // Reset form fields
     setName("");
@@ -40,10 +51,6 @@ function SignUpForm() {
   useEffect(() => {
     console.log(storedUsers);
   }, [storedUsers]);
-
-  const handleSubmit = () => {
-    navigate("/Data");
-  };
 
   return (
     <div>
@@ -100,6 +107,13 @@ function SignUpForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <p style={{ fontSize: "14px", color: "#777777" }}>
+            Your password must:
+          </p>
+          <ul style={{ fontSize: "14px", color: "#777777" }}>
+            <li>Be at least 6 characters long</li>
+            <li>Not be the same as your username or email</li>
+          </ul>
           <button type="submit" className="form-button">
             Create new account
           </button>
