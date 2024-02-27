@@ -78,8 +78,9 @@ body {
 */
 
 .forms-continer {
-  margin-top: 8em;
+  margin: auto;
   display: flex;
+  padding: 40px;
   justify-content: center;
   gap: 5em;
 }

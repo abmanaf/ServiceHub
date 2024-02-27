@@ -1,8 +1,17 @@
 import React from "react";
 import "./Footer.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Footer() {
+  const nagivate = useNavigate();
+
+  const handleNavigateAboutUs = () => {
+    nagivate("/About");
+  };
+  const handleNavigaeContact = () => {
+    nagivate("/Contact");
+  };
+
   return (
     <div>
       <div className="space-before-footer"></div>
@@ -23,9 +32,13 @@ function Footer() {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-links">
-            <Link to="#about">About Us</Link>
+            <Link to="About" onClick={handleNavigateAboutUs}>
+              About Us
+            </Link>
             <Link to="/Service">Services </Link>
-            <Link to="#contact">Contact</Link>
+            <Link to="/Contact" onClick={handleNavigaeContact}>
+              Contact
+            </Link>
           </div>
           <div className="footer-social">
             <Link to="#">
@@ -40,7 +53,7 @@ function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2023 HandyPro. All rights reserved.</p>
+          <p>&copy; 2024 HandyPro. All rights reserved.</p>
         </div>
       </footer>
     </div>
