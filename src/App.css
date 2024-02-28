@@ -221,15 +221,20 @@ body {
 }
 .space-before-footer {
   max-width: 1200px;
-  height: 400px;
+  height: 100px;
 }
 .footer {
   background-color: #f2f2f2;
   padding: 20px;
   color: #888;
-  text-align: center;
+}
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  margin-right: 10px;
 }
 
+/*
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -238,20 +243,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-.footer-links {
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: #888;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.footer-social {
-  margin-bottom: 10px;
-}
+*/
 
 .footer-social a {
   color: #888;
@@ -259,39 +251,6 @@ body {
   margin-right: 10px;
 }
 
-.footer-bottom {
-  margin-top: 10px;
-}
-
-.footer-bottom p {
-  font-size: 14px;
-  margin: 0;
-}
-
-@media (max-width: 767px) {
-  .footer-content {
-    flex-direction: column;
-  }
-  .footer-links {
-    margin-bottom: 20px;
-  }
-  .footer-social {
-    margin-bottom: 20px;
-  }
-  .message-to-users {
-    margin-top: 5em;
-    width: 20em;
-  }
-  .note {
-    margin-top: 6em;
-  }
-  .contianer .site-details .website-banner img {
-    height: 15em;
-  }
-  .header a:not(.active, .logo) {
-    border: none;
-  }
-}
 /* Full-width input fields*/
 .search-provider input[type="text"] {
   margin: 5px 0 22px 0;
@@ -462,4 +421,142 @@ hr {
 .space-between-service-and-footer {
   height: 250px;
   background-color: white;
+}
+
+:root {
+  --background-color: #ffffff;
+  --background-color-rgb: 255, 255, 255;
+  --default-color: #212529;
+  --default-color-rgb: 33, 37, 41;
+  --accent-color: #e84545;
+  --accent-color-rgb: 232, 69, 69;
+  --heading-color: #32353a;
+  --heading-color-rgb: 50, 53, 58;
+  --contrast-color: #ffffff;
+  --contrast-color-rgb: 255, 255, 255;
+}
+
+/* Contact Section - Home Page
+------------------------------*/
+.contact .info-item {
+  background: rgba(var(--default-color-rgb), 0.05);
+  padding: 30px;
+}
+
+.contact .info-item i {
+  font-size: 38px;
+  line-height: 0;
+  color: var(--accent-color);
+}
+
+.contact .info-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.contact .info-item p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.contact .php-email-form {
+  background: rgba(var(--default-color-rgb), 0.05);
+  padding: 30px;
+  height: 100%;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: var(--background-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--background-color);
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input[type="text"],
+.contact .php-email-form input[type="email"],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: rgba(var(--background-color-rgb), 0.5);
+  border-color: rgba(var(--default-color-rgb), 0.2);
+}
+
+.contact .php-email-form input[type="text"]:focus,
+.contact .php-email-form input[type="email"]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type="text"]::-moz-placeholder,
+.contact .php-email-form input[type="email"]::-moz-placeholder,
+.contact .php-email-form textarea::-moz-placeholder {
+  color: rgba(var(--default-color-rgb), 0.3);
+}
+
+.contact .php-email-form input[type="text"]::placeholder,
+.contact .php-email-form input[type="email"]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: rgba(var(--default-color-rgb), 0.3);
+}
+
+.contact .php-email-form button[type="submit"] {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+  background: rgba(var(--accent-color-rgb), 0.8);
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
