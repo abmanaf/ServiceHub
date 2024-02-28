@@ -9,6 +9,8 @@ import Provider from "./Components/Forms/Service-provider/Provider";
 import Service from "./Components/Servicce/Service";
 import Contact from "./Components/Contact/Contact";
 import About from "./Components/About/About";
+import Terms from "./Components/TermsCondition/Terms";
+import Policy from "./Components/Policy/Policy";
 import Data from "./Databas/Data";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
@@ -48,6 +50,8 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Terms" element={<Terms />} />
+        <Route path="/Policy" element={<Policy />} />
       </Routes>
       <Footer />
     </div>

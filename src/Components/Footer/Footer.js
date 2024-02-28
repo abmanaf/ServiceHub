@@ -8,8 +8,11 @@ function Footer() {
   const handleNavigateAboutUs = () => {
     nagivate("/About");
   };
-  const handleNavigaeContact = () => {
-    nagivate("/Contact");
+  const handleNavigateTerms = () => {
+    nagivate("/Terms");
+  };
+  const handleNavigatePolicy = () => {
+    nagivate("/Policy");
   };
 
   return (
@@ -37,9 +40,6 @@ function Footer() {
               About Us
             </Link>
             <Link to="/Service">Service </Link>
-            <Link to="/Contact" onClick={handleNavigaeContact}>
-              Contact
-            </Link>
           </div>
         </div>
       </footer>
@@ -96,10 +96,14 @@ function Footer() {
                   <a href="#">Home</a>
                 </li>
                 <li>
-                  <a href="#">Terms of service</a>
+                  <Link to="/Terms" onClick={handleNavigateTerms}>
+                    Terms of service
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Privacy policy</a>
+                  <Link to="/Policy" onClick={handleNavigatePolicy}>
+                    Privacy policy
+                  </Link>
                 </li>
               </ul>
             </div>
