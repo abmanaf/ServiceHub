@@ -60,7 +60,10 @@ function Footer() {
                 <a href="https://twitter.com/home" className="twitter">
                   <i className="bi bi-twitter"></i>
                 </a>
-                <a href="#" className="facebook">
+                <a
+                  href="https://web.facebook.com/?_rdc=1&_rdr"
+                  className="facebook"
+                >
                   <i className="bi bi-facebook"></i>
                 </a>
                 <a href="#" className="twitter">
@@ -72,21 +75,11 @@ function Footer() {
             <div className="col-lg-2 col-6 footer-links">
               <h4>Our Services</h4>
               <ul>
-                <li>
-                  <a href="#">Web Design</a>
-                </li>
-                <li>
-                  <a href="#">Website Development</a>
-                </li>
-                <li>
-                  <a href="#">Plumber</a>
-                </li>
-                <li>
-                  <a href="#">Home Cleaner</a>
-                </li>
-                <li>
-                  <a href="#">Graphic Design</a>
-                </li>
+                <li>Web Design</li>
+                <li>Website Development</li>
+                <li>Plumber</li>
+                <li>Home Cleaner</li>
+                <li>Graphic Design</li>
               </ul>
             </div>
             <div className="col-lg-2 col-6 footer-links">
