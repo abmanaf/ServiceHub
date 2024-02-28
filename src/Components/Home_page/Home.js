@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import Happy from "./happyC.png";
 import Yahya from "./HomeImages/YahyaTes.jpg";
@@ -7,6 +7,23 @@ import Alhaji from "./HomeImages/AlhajiTes.jpg";
 import Stephen from "./HomeImages/StephenTes.jpg";
 
 function Home() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmitContactForms = (e) => {
+    e.preventDefault();
+
+    alert("Message sent");
+
+    // Clear input fields
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
+  };
+
   return (
     <div className="contianer">
       <div className="site-details">
@@ -27,15 +44,6 @@ function Home() {
                   <a href="#services" className="btn-get-started">
                     Get Started
                   </a>
-                  {/* 
-                  <a
-                    href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                    className="glightbox btn-watch-video d-flex align-items-center"
-                  >
-                  
-                    <span>Watch Video</span>
-                  </a>
-                  */}
                 </div>
               </div>
               <div className="col-lg-6 order-1 order-lg-2">
@@ -88,71 +96,7 @@ function Home() {
               </div>
             </div>
           </div>
-
-          {/* 
-                <div
-                  className="col-xl-3 col-md-6"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <div className="icon-box">
-                    <div className="icon">
-                      <i className="bi bi-gem"></i>
-                    </div>
-                    <h4 className="title">
-                      <a href="" className="stretched-link">
-                        Sed ut perspiciatis
-                      </a>
-                    </h4>
-                  </div>
-                </div>
-                <div
-                  className="col-xl-3 col-md-6"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <div className="icon-box">
-                    <div className="icon">
-                      <i className="bi bi-geo-alt"></i>
-                    </div>
-                    <h4 className="title">
-                      <a href="" className="stretched-link">
-                        Magni Dolores
-                      </a>
-                    </h4>
-                  </div>
-                </div>
-                */}
         </section>
-        {/* 
-        <div className="website-banner">
-          <img
-            src="https://cdn.dribbble.com/userupload/6144946/file/original-de8e04dae3201773b66a1c2403c951ff.png?resize=1024x535"
-            alt="banner"
-            style={{ width: "100%" }}
-          />
-          
-          <div
-            className="message-to-users"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginLeft: "auto",
-              marginRight: "auto",
-              marginTop: "8em",
-              fontSize: "17px",
-            }}
-          >
-            <p className="note" style={{ wordWrap: "break-word" }}>
-              Are you looking for a reliable service provider for your home
-              repairs, maintenance, or improvement? Look no further! Our
-              platform is your go-to place for finding skilled professionals who
-              can get the job done.
-            </p>
-          </div>
-          
-        </div>
- */}
         <div style={{ marginTop: "2em", padding: "15px" }}></div>
         <p
           style={{ textAlign: "center", fontFamily: "Sofia", fontSize: "2em" }}
@@ -604,13 +548,13 @@ function Home() {
                   <div className="testimonial-item">
                     <div className="d-flex align-items-center">
                       <img
-                        src={Happy}
+                        src={Alhaji}
                         className="testimonial-img flex-shrink-0"
                         alt=""
                       />
                       <div>
-                        <h3>Emily White</h3>
-                        <h4>Designer</h4>
+                        <h3>Ibrahim Mohammed</h3>
+                        <h4>Frontend Developer</h4>
                         <div className="stars">
                           <i className="bi bi-star-fill"></i>
                           <i className="bi bi-star-fill"></i>
@@ -622,8 +566,9 @@ function Home() {
                     </div>
                     <p>
                       <i className="bi bi-quote quote-icon-left"></i>
-                      Their creative solutions helped us achieve our goals
-                      effectively. I'm extremely satisfied with their work.
+                      Having this crew to work with was a true delight. Their
+                      professionalism and meticulous attention to detail are
+                      admirable.
                       <i className="bi bi-quote quote-icon-right"></i>
                     </p>
                   </div>
@@ -637,10 +582,10 @@ function Home() {
       <section id="contact" className="contact">
         {/* Section Title */}
         <div className="container section-title" data-aos="fade-up">
-          <h2>Contact</h2>
+          <h2>Contact Us</h2>
           <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Please use the contact information provided below to get in contact
+            with us. We anticipate speaking with you!
           </p>
         </div>
         {/* End Section Title */}
@@ -707,11 +652,10 @@ function Home() {
 
             <div className="col-lg-6">
               <form
-                action=""
-                method="post"
                 className="php-email-form"
                 data-aos="fade-up"
                 data-aos-delay="200"
+                onSubmit={handleSubmitContactForms}
               >
                 <div className="row gy-4">
                   <div className="col-md-6">
@@ -721,6 +665,7 @@ function Home() {
                       className="form-control"
                       placeholder="Your Name"
                       required
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
 
@@ -731,6 +676,7 @@ function Home() {
                       name="email"
                       placeholder="Your Email"
                       required
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
 
@@ -741,6 +687,7 @@ function Home() {
                       name="subject"
                       placeholder="Subject"
                       required
+                      onChange={(e) => setSubject(e.target.value)}
                     />
                   </div>
 
@@ -751,6 +698,7 @@ function Home() {
                       rows="6"
                       placeholder="Message"
                       required
+                      onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                   </div>
 
@@ -770,144 +718,6 @@ function Home() {
           </div>
         </div>
       </section>
-      {/*
-      <section>
-        <div className="d-flex justify-content-end">
-          <a href="#hero " style={{fontSize: '5em'}} data-aos="zoom-out" data-aos-delay="400">
-            <i class="fa fa-arrow-up" aria-hidden="true"></i>
-          </a>
-        </div>
-      </section>
-       */}
-
-      {/*
-      <div class="">
-        <h2 class="" style={{ textAlign: "center" }}>
-          Most Popular project
-        </h2>
-        <br />
-        <p class="">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          pharetra rhoncus suscipit. Integer eget leo pretium, vulputate velit
-          sit amet, aliquam est Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Donec pharetra rhoncus suscipit. Integer eget leo
-          pretium, vulputate velit sit amet, aliquam est
-        </p>
-      </div>
-      <div className=" container-fluid row">
-        <div className="col-sm">
-          <div className="card">
-            <img
-              src="https://nationaleconomyplumber.com/wp-content/uploads/2020/10/Different-Types-of-Plumbers.jpg"
-              alt="Photo by Sam manns"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h2>Plumber</h2>
-              <p className="title">Fixing Leaks & Pipes</p>
-              <p>
-                Our plumbers are prepared to efficiently address any plumbing
-                problems, from leak repairs to unclogging drains.
-              </p>
-            </div>
-          </div>
-        </div>
-        <br />
-        <div className="col-sm">
-          <div className="card">
-            <img
-              src="https://media.istockphoto.com/id/181120606/photo/painter-painting-wood-trim.jpg?s=612x612&w=0&k=20&c=EUoiVwG7MUpEWorR5F_ILQMmgk4Q5x4kMW6_XdZxvdY="
-              alt="Photo by Wieger Stienstra"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h2>Painter</h2>
-              <p className="title">Transforming Spaces</p>
-              <p>
-                With their artistic brushstrokes and meticulous attention to
-                detail, our talented painters will breathe new life into your
-                walls.
-              </p>
-            </div>
-          </div>
-        </div>
-        <br />
-        <div className="col-sm">
-          <div className="card">
-            <img
-              src="https://media.istockphoto.com/id/516005348/photo/african-electrical-worker-using-laptop-computer.jpg?s=612x612&w=0&k=20&c=YOoIZXo1BHEVdi_R-bXQvxCwX7nkaCogh6YzdysFtbY="
-              alt="Photo by Manuel Meza"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h2>Electrician</h2>
-              <p className="title">Wiring & Installations</p>
-              <p>
-                Our electricians provide answers for all of your electrical
-                demands while making sure your house is wired safely and
-                effectively.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div className="row">
-        <div className="col-sm">
-          <div className="card">
-            <img
-              src="https://media.istockphoto.com/id/654153664/photo/cleaning-service-sponges-chemicals-and-mop.jpg?s=612x612&w=0&k=20&c=vHQzKbz7L8oEKEp5oQzfx8rwsOMAV3pHTV_1VPZsREA="
-              alt="Photo by Wieger Stienstra"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h2>Home Cleaner</h2>
-              <p className="title">Spotless Cleaning</p>
-              <p>
-                Remain calm and comfortable as our professional cleaners turn
-                your house into a tidy and revitalizing environment.
-              </p>
-            </div>
-          </div>
-        </div>
-        <br />
-        <div className="col-sm">
-          <div className="card">
-            <img
-              src="https://media.istockphoto.com/id/625135580/photo/laptop-disassembling-with-screwdriver-at-repair.jpg?s=612x612&w=0&k=20&c=Em-dB6fevNhRd5yaIxcgjDfFxuTVT4OSm_ys_Ybke6c="
-              alt="Photo by Sam manns"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h2>Electronics Technician</h2>
-              <p className="title">Repair & Maintenance</p>
-              <p>
-                Trust our skilled experts to repair any issues with your
-                electrical devices, ensuring they function properly.
-              </p>
-            </div>
-          </div>
-        </div>
-        <br />
-        <div className="col-sm">
-          <div className="card">
-            <img
-              src="https://media.istockphoto.com/id/177318607/photo/construction-mason-worker-bricklayer.jpg?s=170667a&w=0&k=20&c=TU8eb3u_vJx9aHDIC3F9JU8C3ck6gQFBl1b8b1Ljxh0="
-              alt="Photo by Manuel Meza"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h2>Mason/Builder</h2>
-              <p className="title">Constructing Dreams</p>
-              <p>
-                Make your fantasy space a reality with the help of our
-                knowledgeable masons and builders.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      */}
     </div>
   );
 }
