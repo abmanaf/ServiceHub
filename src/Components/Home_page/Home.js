@@ -1,5 +1,10 @@
 import React from "react";
 import "./Home.css";
+import Happy from "./happyC.png";
+import Yahya from "./HomeImages/YahyaTes.jpg";
+import Faisal from "./HomeImages/FaisalTes.jpg";
+import Alhaji from "./HomeImages/AlhajiTes.jpg";
+import Stephen from "./HomeImages/StephenTes.jpg";
 
 function Home() {
   return (
@@ -19,7 +24,7 @@ function Home() {
                   website developer, we've got you covered.
                 </p>
                 <div className="d-flex justify-content-center justify-content-lg-start">
-                  <a href="#about" className="btn-get-started">
+                  <a href="#services" className="btn-get-started">
                     Get Started
                   </a>
                   {/* 
@@ -277,10 +282,63 @@ function Home() {
           </div>
         </div>
       </section>
-      <section id="services" className="services ">
+      <section id="stats-counter" className="stats-counter">
+        <div className="container" data-aos="fade-up">
+          <div className="row gy-4 align-items-center">
+            <div className="col-lg-6">
+              <img src={Happy} alt="" className="img-fluid" />
+            </div>
+            <div className="col-lg-6">
+              <div className="stats-item d-flex align-items-center">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="232"
+                  data-purecounter-duration="1"
+                  className="purecounter"
+                >
+                  31
+                </span>
+                <p>
+                  <strong>Happy Clients</strong> utilizing our resources to
+                  identify the ideal service suppliers.
+                </p>
+              </div>
+              <div className="stats-item d-flex align-items-center">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="521"
+                  data-purecounter-duration="1"
+                  className="purecounter"
+                >
+                  12
+                </span>
+                <p>
+                  <strong>Projects</strong> with the assistance of our
+                  dependable service providers.
+                </p>
+              </div>
+              <div className="stats-item d-flex align-items-center">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="453"
+                  data-purecounter-duration="1"
+                  className="purecounter"
+                >
+                  20
+                </span>
+                <p>
+                  <strong>Hours Of Support</strong> ready to help you locate the
+                  ideal service provider.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services" className="services sections-bg">
         <div className="container" data-aos="fade-up">
           <div className="section-header">
-            <h2>Most Popular project</h2>
+            <h2> Popular Service</h2>
             <p>
               Greetings from our platform! To meet your demands, we provide an
               extensive array of services. View our selections below:
@@ -395,6 +453,188 @@ function Home() {
           </div>
         </div>
       </section>
+      <section id="testimonials" className="testimonials display-flex">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Testimonials</h2>
+            <p>Here are some testimonials from our satisfied customers.</p>
+          </div>
+          <div
+            className="slides-3 swiper"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div className="swiper-wrapper">
+              <div className="swiper-slide">
+                <div className="testimonial-wrap">
+                  <div className="testimonial-item">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={Alhaji}
+                        className="testimonial-img flex-shrink-0"
+                        alt=""
+                      />
+                      <div>
+                        <h3>Ibrahim Mohammed</h3>
+                        <h4>Frontend Developer</h4>
+                        <div className="stars">
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i className="bi bi-quote quote-icon-left"></i>
+                      Having this crew to work with was a true delight. Their
+                      professionalism and meticulous attention to detail are
+                      admirable.
+                      <i className="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="swiper-slide">
+                <div className="testimonial-wrap">
+                  <div className="testimonial-item">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={Stephen}
+                        className="testimonial-img flex-shrink-0"
+                        alt=""
+                      />
+                      <div>
+                        <h3>Apam Stephen</h3>
+                        <h4>Software Developer</h4>
+                        <div className="stars">
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i className="bi bi-quote quote-icon-left"></i>
+                      The caliber of the team's work and their commitment to it
+                      have truly impressed me. They went above and above what I
+                      had anticipated.
+                      <i className="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="swiper-slide">
+                <div className="testimonial-wrap">
+                  <div className="testimonial-item">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={Faisal}
+                        className="testimonial-img flex-shrink-0"
+                        alt=""
+                      />
+                      <div>
+                        <h3>Faisal Abdul Hamid</h3>
+                        <h4>Engineer</h4>
+                        <div className="stars">
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i className="bi bi-quote quote-icon-left"></i>
+                      The group's commitment to quality is unparalleled.
+                      Outstanding outcomes are continuously delivered by them.
+                      <i className="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="swiper-slide">
+                <div className="testimonial-wrap">
+                  <div className="testimonial-item">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={Yahya}
+                        className="testimonial-img flex-shrink-0"
+                        alt=""
+                      />
+                      <div>
+                        <h3>Yahya Osman</h3>
+                        <h4>Entrepreneur</h4>
+                        <div className="stars">
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i className="bi bi-quote quote-icon-left"></i>This group
+                      is very highly recommended by me. They delivered on
+                      schedule and offered first-rate assistance.
+                      <i className="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="swiper-slide">
+                <div className="testimonial-wrap">
+                  <div className="testimonial-item">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={Happy}
+                        className="testimonial-img flex-shrink-0"
+                        alt=""
+                      />
+                      <div>
+                        <h3>Emily White</h3>
+                        <h4>Designer</h4>
+                        <div className="stars">
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i className="bi bi-quote quote-icon-left"></i>
+                      Their creative solutions helped us achieve our goals
+                      effectively. I'm extremely satisfied with their work.
+                      <i className="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      {/*
+      <section>
+        <div className="d-flex justify-content-end">
+          <a href="#hero " style={{fontSize: '5em'}} data-aos="zoom-out" data-aos-delay="400">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
+       */}
+
       {/*
       <div class="">
         <h2 class="" style={{ textAlign: "center" }}>
