@@ -657,8 +657,8 @@ function Home() {
                   >
                     <i className="bi bi-geo-alt"></i>
                     <h3>Address</h3>
-                    <p>A108 Adam Street</p>
-                    <p>New York, NY 535022</p>
+                    <p>Nii Sowah Gbovilor Street</p>
+                    <p>Adenta, Ghana</p>
                   </div>
                 </div>
                 {/* End Info Item */}
@@ -671,8 +671,8 @@ function Home() {
                   >
                     <i className="bi bi-telephone"></i>
                     <h3>Call Us</h3>
-                    <p>+1 5589 55488 55</p>
-                    <p>+1 6678 254445 41</p>
+                    <p>+223 552 669 950</p>
+                    <p>0552669950</p>
                   </div>
                 </div>
                 {/* End Info Item */}
@@ -685,8 +685,7 @@ function Home() {
                   >
                     <i className="bi bi-envelope"></i>
                     <h3>Email Us</h3>
-                    <p>info@example.com</p>
-                    <p>contact@example.com</p>
+                    <p>abdulmanafaliu414@gmail.com</p>
                   </div>
                 </div>
                 {/* End Info Item */}
@@ -699,8 +698,7 @@ function Home() {
                   >
                     <i className="bi bi-clock"></i>
                     <h3>Open Hours</h3>
-                    <p>Monday - Friday</p>
-                    <p>9:00AM - 05:00PM</p>
+                    <p>24/7</p>
                   </div>
                 </div>
                 {/* End Info Item */}
