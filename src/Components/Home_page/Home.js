@@ -14,14 +14,21 @@ function Home() {
 
   const handleSubmitContactForms = (e) => {
     e.preventDefault();
+    if (
+      name.length > 0 &&
+      email.length > 0 &&
+      subject.length > 0 &&
+      message.length > 0
+    ) {
+      alert("Message sent");
 
-    alert("Message sent");
-
-    // Clear input fields
-    setName("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+    } else {
+      alert("Please fill in all the fields");
+    }
   };
 
   return (
@@ -46,19 +53,13 @@ function Home() {
                   </a>
                 </div>
               </div>
-              <div className="col-lg-6 order-1 order-lg-2">
-                <img
-                  src="HomeService.png"
-                  className="img-fluid"
-                  alt=""
-                  data-aos="zoom-out"
-                  data-aos-delay="100"
-                />
-              </div>
             </div>
           </div>
 
-          <div className="icon-boxes position-relative">
+          <div
+            className="icon-boxes position-relative"
+            style={{ color: "white" }}
+          >
             <div className="container position-relative">
               <div className="row gy-4 mt-5">
                 <div
@@ -70,11 +71,7 @@ function Home() {
                     <div className="icon">
                       <i className="bi bi-hammer"></i>
                     </div>
-                    <h4 className="title">
-                      <a href="#" className="stretched-link">
-                        Home Improvement
-                      </a>
-                    </h4>
+                    <h4 className="title">Home Improvement</h4>
                   </div>
                 </div>
                 <div
@@ -87,9 +84,11 @@ function Home() {
                       <i className="bi bi-brush"></i>
                     </div>
                     <h4 className="title">
+                      Cleaning Services
+                      {/* 
                       <a href="#" className="stretched-link">
-                        Cleaning Services
                       </a>
+                      */}
                     </h4>
                   </div>
                 </div>
@@ -239,7 +238,7 @@ function Home() {
         <div className="container" data-aos="fade-up">
           <div className="row gy-4 align-items-center">
             <div className="col-lg-6">
-              <img src={Happy} alt="" className="img-fluid" />
+              <img src={Happy} className="img-fluid" />
             </div>
             <div className="col-lg-6">
               <div className="stats-item d-flex align-items-center">
@@ -425,7 +424,6 @@ function Home() {
                       <img
                         src={Alhaji}
                         className="testimonial-img flex-shrink-0"
-                        alt=""
                       />
                       <div>
                         <h3>Ibrahim Mohammed</h3>
@@ -456,7 +454,6 @@ function Home() {
                       <img
                         src={Stephen}
                         className="testimonial-img flex-shrink-0"
-                        alt=""
                       />
                       <div>
                         <h3>Apam Stephen</h3>
@@ -488,7 +485,6 @@ function Home() {
                       <img
                         src={Faisal}
                         className="testimonial-img flex-shrink-0"
-                        alt=""
                       />
                       <div>
                         <h3>Faisal Abdul Hamid</h3>
@@ -519,7 +515,6 @@ function Home() {
                       <img
                         src={Yahya}
                         className="testimonial-img flex-shrink-0"
-                        alt=""
                       />
                       <div>
                         <h3>Yahya Osman</h3>
@@ -550,7 +545,6 @@ function Home() {
                       <img
                         src={Alhaji}
                         className="testimonial-img flex-shrink-0"
-                        alt=""
                       />
                       <div>
                         <h3>Ibrahim Mohammed</h3>
@@ -714,7 +708,6 @@ function Home() {
                 </div>
               </form>
             </div>
-            {/* End Contact Form */}
           </div>
         </div>
       </section>

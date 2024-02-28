@@ -66,7 +66,10 @@ function Footer() {
                 >
                   <i className="bi bi-facebook"></i>
                 </a>
-                <a href="#" className="twitter">
+                <a
+                  href="https://web.facebook.com/?_rdc=1&_rdr"
+                  className="twitter"
+                >
                   <i className="bi bi-instagram"></i>
                 </a>
               </div>
@@ -85,9 +88,6 @@ function Footer() {
             <div className="col-lg-2 col-6 footer-links">
               <h4>Other Links</h4>
               <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
                 <li>
                   <Link to="/Terms" onClick={handleNavigateTerms}>
                     Terms of service
