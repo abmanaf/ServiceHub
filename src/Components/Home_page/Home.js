@@ -238,7 +238,7 @@ function Home() {
         <div className="container" data-aos="fade-up">
           <div className="row gy-4 align-items-center">
             <div className="col-lg-6">
-              <img src={Happy} alt="Happy" className="img-fluid" />
+              <img src={Happy} alt="appy" className="img-fluid" />
             </div>
             <div className="col-lg-6">
               <div className="stats-item d-flex align-items-center">
@@ -302,7 +302,7 @@ function Home() {
               <div className="card">
                 <img
                   src="https://nationaleconomyplumber.com/wp-content/uploads/2020/10/Different-Types-of-Plumbers.jpg"
-                  alt="Photo by Sam manns"
+                  alt=" by Sam manns"
                   style={{ width: "100%" }}
                 />
                 <div className="container">
@@ -319,7 +319,7 @@ function Home() {
               <div className="card">
                 <img
                   src="https://media.istockphoto.com/id/181120606/photo/painter-painting-wood-trim.jpg?s=612x612&w=0&k=20&c=EUoiVwG7MUpEWorR5F_ILQMmgk4Q5x4kMW6_XdZxvdY="
-                  alt="Photo by Wieger Stienstra"
+                  alt=" by Wieger Stienstra"
                   style={{ width: "100%" }}
                 />
                 <div className="container">
@@ -337,7 +337,7 @@ function Home() {
               <div className="card">
                 <img
                   src="https://media.istockphoto.com/id/516005348/photo/african-electrical-worker-using-laptop-computer.jpg?s=612x612&w=0&k=20&c=YOoIZXo1BHEVdi_R-bXQvxCwX7nkaCogh6YzdysFtbY="
-                  alt="Photo by Manuel Meza"
+                  alt=" by Manuel Meza"
                   style={{ width: "100%" }}
                 />
                 <div className="container">
@@ -355,7 +355,7 @@ function Home() {
               <div className="card">
                 <img
                   src="https://media.istockphoto.com/id/625135580/photo/laptop-disassembling-with-screwdriver-at-repair.jpg?s=612x612&w=0&k=20&c=Em-dB6fevNhRd5yaIxcgjDfFxuTVT4OSm_ys_Ybke6c="
-                  alt="Photo by Sam manns"
+                  alt=" by Sam manns"
                   style={{ width: "100%" }}
                 />
                 <div className="container">
@@ -372,7 +372,7 @@ function Home() {
               <div className="card">
                 <img
                   src="https://media.istockphoto.com/id/177318607/photo/construction-mason-worker-bricklayer.jpg?s=170667a&w=0&k=20&c=TU8eb3u_vJx9aHDIC3F9JU8C3ck6gQFBl1b8b1Ljxh0="
-                  alt="Photo by Manuel Meza"
+                  alt=" by Manuel Meza"
                   style={{ width: "100%" }}
                 />
                 <div className="container">
@@ -389,7 +389,7 @@ function Home() {
               <div className="card">
                 <img
                   src="https://media.istockphoto.com/id/654153664/photo/cleaning-service-sponges-chemicals-and-mop.jpg?s=612x612&w=0&k=20&c=vHQzKbz7L8oEKEp5oQzfx8rwsOMAV3pHTV_1VPZsREA="
-                  alt="Photo by Wieger Stienstra"
+                  alt=" by Wieger Stienstra"
                   style={{ width: "100%" }}
                 />
                 <div className="container">
@@ -424,7 +424,7 @@ function Home() {
                       <img
                         src={Alhaji}
                         className="testimonial-img flex-shrink-0"
-                        alt="Alhaji"
+                        alt="lhaji"
                       />
                       <div>
                         <h3>Ibrahim Mohammed</h3>
@@ -455,7 +455,7 @@ function Home() {
                       <img
                         src={Stephen}
                         className="testimonial-img flex-shrink-0"
-                        alt="Stephen"
+                        alt="tephen"
                       />
                       <div>
                         <h3>Apam Stephen</h3>
@@ -487,7 +487,7 @@ function Home() {
                       <img
                         src={Faisal}
                         className="testimonial-img flex-shrink-0"
-                        alt="Faisal"
+                        alt="aisal"
                       />
                       <div>
                         <h3>Faisal Abdul Hamid</h3>
@@ -518,7 +518,7 @@ function Home() {
                       <img
                         src={Yahya}
                         className="testimonial-img flex-shrink-0"
-                        alt="Yahya"
+                        alt="ahya"
                       />
                       <div>
                         <h3>Yahya Osman</h3>
@@ -549,7 +549,7 @@ function Home() {
                       <img
                         src={Alhaji}
                         className="testimonial-img flex-shrink-0"
-                        alt="Alhaji"
+                        alt="lhaji"
                       />
                       <div>
                         <h3>Ibrahim Mohammed</h3>
