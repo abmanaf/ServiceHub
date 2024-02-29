@@ -126,13 +126,13 @@ function Home() {
               extensive array of services. View our selections below:
             </p>
           </div>
-          <a
-            href="/Service"
+          <Link
+            to="/Service"
             className="d-flex justify-content-end mb-2 text-decoration-none text-dark"
             style={{ fontSize: "20px" }}
           >
             Explore All <i className="bi bi-arrow-right"></i>
-          </a>
+          </Link>
 
           <div className="row gy-4" data-aos="fade-up" data-aos-delay="100">
             <div className="col-lg-4 col-md-6">
