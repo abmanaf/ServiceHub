@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { useLocation } from "react-router-dom";
 import "./Contact.css";
 
 const Contact = () => {
@@ -7,20 +6,10 @@ const Contact = () => {
   const [contactingEmail, setContactingEmail] = useState("");
   const [contactingMessage, setContactingMessage] = useState("");
 
-  const [contacting, setContacting] = useState([]);
-
   const handleSendFromContactPage = (e) => {
     e.preventDefault();
 
     if (contactingName && contactingEmail && contactingMessage) {
-      const newContact = {
-        name: contactingName,
-        email: contactingEmail,
-        message: contactingMessage,
-      };
-
-      setContacting((contacting) => [...contacting, newContact]);
-
       setContactingName("");
       setContactingEmail("");
       setContactingMessage("");
@@ -28,11 +17,9 @@ const Contact = () => {
       alert("Please fill in all fields before submitting.");
     }
     console.log(
-      `mame ${contactingName}, email: ${contactingEmail}, message: ${contactingMessage}`
+      `name: ${contactingName}, email: ${contactingEmail}, message: ${contactingMessage}`
     );
   };
-
-  // const location = useLocation();
 
   return (
     <div className="Contact-container">
