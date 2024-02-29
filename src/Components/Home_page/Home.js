@@ -238,7 +238,7 @@ function Home() {
         <div className="container" data-aos="fade-up">
           <div className="row gy-4 align-items-center">
             <div className="col-lg-6">
-              <img src={Happy} className="img-fluid" />
+              <img src={Happy} alt="Happy" className="img-fluid" />
             </div>
             <div className="col-lg-6">
               <div className="stats-item d-flex align-items-center">
@@ -424,6 +424,7 @@ function Home() {
                       <img
                         src={Alhaji}
                         className="testimonial-img flex-shrink-0"
+                        alt="Alhaji"
                       />
                       <div>
                         <h3>Ibrahim Mohammed</h3>
@@ -454,6 +455,7 @@ function Home() {
                       <img
                         src={Stephen}
                         className="testimonial-img flex-shrink-0"
+                        alt="Stephen"
                       />
                       <div>
                         <h3>Apam Stephen</h3>
@@ -485,6 +487,7 @@ function Home() {
                       <img
                         src={Faisal}
                         className="testimonial-img flex-shrink-0"
+                        alt="Faisal"
                       />
                       <div>
                         <h3>Faisal Abdul Hamid</h3>
@@ -515,6 +518,7 @@ function Home() {
                       <img
                         src={Yahya}
                         className="testimonial-img flex-shrink-0"
+                        alt="Yahya"
                       />
                       <div>
                         <h3>Yahya Osman</h3>
@@ -545,6 +549,7 @@ function Home() {
                       <img
                         src={Alhaji}
                         className="testimonial-img flex-shrink-0"
+                        alt="Alhaji"
                       />
                       <div>
                         <h3>Ibrahim Mohammed</h3>
@@ -708,6 +713,7 @@ function Home() {
                 </div>
               </form>
             </div>
+            {/* End Contact Form */}
           </div>
         </div>
       </section>
