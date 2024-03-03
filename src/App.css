@@ -289,10 +289,9 @@ button:hover {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
 }
 
-/* Style the horizontal ruler */
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
@@ -359,11 +358,7 @@ hr {
 .navbar a:hover:not(.logo) {
   background-color: #7d7878;
 }
-/*
-.navbar a.active {
-  background-color: #04aa6d;
-}
-*/
+
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;
@@ -403,8 +398,6 @@ hr {
   --contrast-color-rgb: 255, 255, 255;
 }
 
-/* Contact Section - Home Page
-------------------------------*/
 .contact .info-item {
   background: rgba(var(--default-color-rgb), 0.05);
   padding: 30px;
