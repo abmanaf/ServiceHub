@@ -2,8 +2,6 @@ import React from "react";
 //import DisplayUserDetails from "../Display_users_details/DisplayUserDetails";
 import Info from "../StoredInfo/Info";
 
-//import "./Data.css";
-
 function Data({ storedUsers, userDetails }) {
   return (
     <div>
