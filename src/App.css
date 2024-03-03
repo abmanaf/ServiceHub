@@ -24,13 +24,12 @@ body {
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
-  margin-right: 10px; /* Add margin-right to create a gap between links */
+  margin-right: 10px;
 }
 .header a:not(.active, .logo) {
   border: 1px solid rgb(138, 131, 131);
 }
 
-/* Add a larger margin-right to the last link to separate it from others */
 .header .header-right a:last-child {
   margin-right: 20px;
 }
@@ -100,11 +99,6 @@ body {
     border: none;
   }
 }
-/*
-.site-details {
-  background-color: #b9d9f9;
-}
-*/
 .empty-container {
   background: white;
   height: 150px;
