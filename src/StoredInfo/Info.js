@@ -28,7 +28,6 @@ function Info({ storedUsers, userDetails }) {
           ))}
         </table>
       </div>
-      {/* Display users details*/}
       <div>
         <h2>User Details</h2>
         <table>
