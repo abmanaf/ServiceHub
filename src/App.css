@@ -225,17 +225,6 @@ body {
   margin-right: 10px;
 }
 
-/*
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-*/
-
 .footer-social a {
   color: #888;
   text-decoration: none;
