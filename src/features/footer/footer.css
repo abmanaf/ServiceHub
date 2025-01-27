@@ -1,0 +1,143 @@
+.footer_section {
+  background-color: #f2f2f2;
+  padding: 20px;
+  color: #888;
+}
+
+.sub_footer_container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.inner_footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer_text_links {
+  width: 100%;
+  max-width: 400px;
+  text-align: start;
+}
+
+.footer_services_links,
+.footer_other_links,
+.footer_contact {
+  width: 100%;
+  max-width: 250px;
+  text-align: start;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+  font-size: 2.5em;
+}
+
+.socials_links {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.twitter_icon,
+.facebook_icon,
+.instagram_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.twitter_icon {
+  color: #00acee;
+}
+.facebook_icon {
+  color: #3b5998;
+}
+.instagram_icon {
+  color: #e4405f;
+}
+
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer_links a {
+  text-decoration: none;
+  color: #888;
+  transition: 0.3s;
+}
+
+.footer_links a:hover {
+  color: #00acee;
+}
+
+.footer_services_links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_services_links li {
+  padding: 5px 0;
+}
+
+.copyright_text {
+  margin-top: 2em;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .inner_footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer_text_links,
+  .footer_services_links,
+  .footer_other_links,
+  .footer_contact {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .socials_links {
+    justify-content: center;
+  }
+
+  .sub_footer_container {
+    width: 95%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .inner_footer {
+    justify-content: space-around;
+  }
+
+  .footer_text_links {
+    max-width: 300px;
+  }
+
+  .footer_services_links,
+  .footer_other_links,
+  .footer_contact {
+    max-width: 200px;
+  }
+}
