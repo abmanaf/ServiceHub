@@ -1,0 +1,22 @@
+.spanner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spinner-border{
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.25rem;
+    border-color: #f8f9fa;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+@keyframes spinner-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
