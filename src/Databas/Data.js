@@ -1,5 +1,4 @@
 import React from "react";
-//import DisplayUserDetails from "../Display_users_details/DisplayUserDetails";
 import Info from "../StoredInfo/Info";
 
 function Data({ storedUsers, userDetails }) {

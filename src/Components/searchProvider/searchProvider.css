@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
+.search-container {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-title {
+  text-align: center;
+  font-family: 'Sofia', cursive;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 30px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.search-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-wrapper {
+  display: flex;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.search-wrapper:focus-within {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.search-input {
+  flex: 1;
+  padding: 15px 25px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.search-input::placeholder {
+  color: #888;
+  opacity: 0.7;
+}
+
+.search-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #007bff;
+  border: none;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button:hover {
+  background: #0056b3;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.search-button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.search-button i {
+  font-size: 18px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    padding: 30px 15px;
+  }
+  
+  .search-title {
+    font-size: 1.8em;
+  }
+  
+  .search-input {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+  
+  .search-button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-title {
+    font-size: 1.5em;
+  }
+  
+  .search-input {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+  
+  .search-button {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .search-button i {
+    font-size: 16px;
+  }
+}
