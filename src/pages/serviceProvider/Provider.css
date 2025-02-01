@@ -5,7 +5,6 @@
 
 .header h1 {
   font-family: "Sofia", sans-serif;
-
   font-size: 25px;
   font-weight: bold;
   color: #007bff;
@@ -19,6 +18,46 @@
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-top: 6em;
+  margin-bottom: 4em;
+  text-align: center;
+}
+
+.form-title {
+  text-align: center;
+}
+.password_critarias{
+  text-align: start;
+}
+.avatar-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.avatar-icon {
+  font-size: 150px;
+  color: #777777;
+}
+
+.avatar-input {
+  display: none;
 }
 
 .form-input {
@@ -28,6 +67,22 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+}
+
+.border-error {
+  border: 1px solid red !important;
+}
+
+.password-requirements {
+  font-size: 14px;
+  color: #777777;
+}
+
+.password-requirements-list {
+  font-size: 14px;
+  color: #777777;
+  list-style-type: none;
+  padding: 0;
 }
 
 .form-button {
@@ -43,22 +98,28 @@
   cursor: pointer;
 }
 
-.form-button:hover {
-  background-color: #0056b3;
-}
-table,
-td,
-th {
-  border: 1px solid #ddd;
-  text-align: left;
+.form-footer {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
+.login-link {
+  color: #007bff;
+  text-decoration: none;
 }
 
-th,
-td {
-  padding: 15px;
+.login-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px){
+  .form-container {
+    width: 90%;
+  }
+  .password_critarias{
+    text-align: center;
+  }
+  .password-requirements,.password-requirements-list {
+    text-align: left;
+  }
 }

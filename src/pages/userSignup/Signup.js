@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Signup.css";
+import Input from "../../Components/Input";
+import Button from "../../Components/Button";
 
 function SignUpForm() {
   const [name, setName] = useState("");
@@ -9,117 +11,132 @@ function SignUpForm() {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [storedUsers, setStoredUser] = useState([]);
+  const [error, setError] = useState({
+    name: false,
+    userName: false,
+    email: false,
+    phone: false,
+    password: false,
+  });
+
+  //we are Loading stored users from local storage on component mount
+  useEffect(() => {
+    const storedData = localStorage.getItem("Users");
+    if (storedData) {
+      setStoredUser(JSON.parse(storedData));
+    }
+  }, []);
+
+  //we are Saving users to local storage whenever storedUsers changes
+  useEffect(() => {
+    localStorage.setItem("Users", JSON.stringify(storedUsers));
+  }, [storedUsers]);
+
+  const validateForm = () => {
+    const newError = {
+      name: name.trim() === "",
+      userName: userName.trim() === "",
+      email: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
+      phone: phone.trim() === "",
+      password: password.length < 6 || password === userName || password === email,
+    };
+
+    setError(newError);
+    return !Object.values(newError).some((err) => err);
+  };
 
   const hanldeUserSignup = (e) => {
     e.preventDefault();
-    if (password.length < 6) {
-      alert("Password must be at least 6 characters long.");
-      return;
-    }
-    if (password === userName) {
-      alert("Password cannot be the same as user name.");
-      return;
-    }
-    if (password === email) {
-      alert("Password cannot be the same as email.");
-      return;
-    }
+    if (validateForm()) {
+      const newUser = {
+        name,
+        userName,
+        email,
+        phone,
+        password,
+      };
 
-    const newUser = {
-      name,
-      userName,
-      email,
-      phone,
-      password,
-    };
+      setStoredUser((prevUsers) => {
+        const updatedUsers = [...prevUsers, newUser];
+        return updatedUsers;
+      });
 
-    setStoredUser([...storedUsers, newUser]);
-    setName("");
-    setUsername("");
-    setEmail("");
-    setPhone("");
-    setPassword("");
+      setName("");
+      setUsername("");
+      setEmail("");
+      setPhone("");
+      setPassword("");
+
+      alert("Account created successfully!");
+    }
   };
-
-  useEffect(() => {
-    console.log(storedUsers);
-  }, [storedUsers]);
 
   return (
     <div>
-      <div
-        className="form-container"
-        style={{ justifyContent: "center", marginTop: "6em" }}
-      >
-        <h2 style={{ textAlign: "center" }}>Create Account</h2>
+      <div className="form-container">
+        <h2>Create Account</h2>
         <form onSubmit={hanldeUserSignup}>
-          <input
+          <Input
             type="text"
             name="full_name"
-            className="form-input"
+            className={`form-input ${error.name ? "border-error" : ""}`}
             placeholder="Full name"
-            required
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <input
+
+          <Input
             type="text"
             name="User Name"
-            className="form-input"
+            className={`form-input ${error.userName ? "border-error" : ""}`}
             placeholder="User Name"
-            required
             value={userName}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <input
+
+          <Input
             type="email"
-            name="last_name"
-            className="form-input"
+            name="email"
+            className={`form-input ${error.email ? "border-error" : ""}`}
             placeholder="Email"
-            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <input
+          <Input
             type="number"
             name="Phone"
-            className="form-input"
+            className={`form-input ${error.phone ? "border-error" : ""}`}
             placeholder="Phone"
-            required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
 
-          <input
+          <Input
             type="password"
             name="password"
-            className="form-input"
+            className={`form-input ${error.password ? "border-error" : ""}`}
             placeholder="Password"
-            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <p style={{ fontSize: "14px", color: "#777777" }}>
-            Your password must:
-          </p>
-          <ul style={{ fontSize: "14px", color: "#777777" }}>
-            <li>Be at least 6 characters long</li>
-            <li>Not be the same as your username or email</li>
-          </ul>
-          <button type="submit" className="form-button">
+
+          <div className="password_critarias">
+            <p className="password-requirements">Your password must:</p>
+            <ul className="password-requirements-list">
+              <li>Be at least 6 characters long</li>
+              <li>Not be the same as your username or email</li>
+            </ul>
+          </div>
+
+          <Button type="submit" className="form-button">
             Create new account
-          </button>
-          <br />
+          </Button>
+
           <p className="form-footer">
-            Already have an account?{" "}
-            <Link to="/Login" style={{ color: "#007bff" }}>
-              Login
-            </Link>
+            Already have an account? <Link to="/Login">Login</Link>
           </p>
         </form>
-      </div>
-      <div>
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ const Home = () => {
               <h4>Home Improvement</h4>
             </div>
 
-            <div className="icon-box" data-aos="fade-up" data-aos-delay="500">
+            <div className="icon-box">
               <div className="icon">
                 <i className="bi bi-brush"></i>
               </div>
