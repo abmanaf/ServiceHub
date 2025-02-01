@@ -21,7 +21,7 @@ const SearchProvider = () => {
 
   useEffect(() => {
     setFilteredProviders(allProviders);
-  }, [localStorageProviders]);
+  }, [allProviders]);
 
   const handleSearch = (e) => {
     e.preventDefault();
