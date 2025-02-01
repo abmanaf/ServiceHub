@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "./searchProvider.css";
 import Button from "../Button";
 import predefinedProviders from "./initialServiceProviders";
@@ -16,12 +16,15 @@ const SearchProvider = () => {
     }
   }, []);
 
-  // Combining predefined and localStorage providers
-  const allProviders = [...predefinedProviders, ...localStorageProviders];
+  // Memoize the combined providers array
+  const allProviders = useMemo(() => {
+    return [...predefinedProviders, ...localStorageProviders];
+  }, [localStorageProviders]); // Recalculate only when localStorageProviders changes
 
+  // Update filteredProviders when allProviders changes
   useEffect(() => {
     setFilteredProviders(allProviders);
-  }, [allProviders]);
+  }, [allProviders]); // Add allProviders as a dependency
 
   const handleSearch = (e) => {
     e.preventDefault();
