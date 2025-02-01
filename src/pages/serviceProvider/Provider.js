@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Provider.css";
+import Input from "../../Components/Input";
+import Button from "../../Components/Button";
 
-function SignUpForm() {
+const SignUpForm = () => {
   const [avatar, setAvatar] = useState(null);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -11,48 +13,85 @@ function SignUpForm() {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [userDetails, setUserDetails] = useState([]);
+  const [error, setError] = useState({
+    name: false,
+    username: false,
+    email: false,
+    profession: false,
+    phone: false,
+    password: false,
+  });
+
+  // Load user details from local storage on component mount
+  useEffect(() => {
+    const getUserDetails = localStorage.getItem("Service Provider");
+    if (getUserDetails) {
+      setUserDetails(JSON.parse(getUserDetails));
+    }
+  }, []);
+
+  // Save user details to local storage whenever userDetails changes
+  useEffect(() => {
+    localStorage.setItem("Service Provider", JSON.stringify(userDetails));
+  }, [userDetails]);
+
+  const validatePassword = () => {
+    if (password.length < 6) {
+      return true;
+    }
+    if (password === username) {
+      return true;
+    }
+    if (password === email) {
+      return true;
+    }
+    return false;
+  };
+
+  const validateForm = () => {
+    const newError = {
+      name: name.trim() === "",
+      username: username.trim() === "",
+      email: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
+      profession: profession.trim() === "",
+      phone: phone.trim() === "",
+      password: validatePassword(),
+    };
+    setError(newError);
+
+    return !Object.values(newError).some((err) => err);
+  };
 
   const handleAvatarChange = (event) => {
     const file = event.target.files[0];
     setAvatar(file);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (password.length < 6) {
-      alert("Password must be at least 6 characters long.");
-      return;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      const user = {
+        name,
+        username,
+        email,
+        profession,
+        phone,
+        password,
+        avatar: avatar ? URL.createObjectURL(avatar) : null, // Store avatar URL
+        id: Date.now(),
+      };
+      setUserDetails([...userDetails, user]);
+      setName("");
+      setUsername("");
+      setEmail("");
+      setProfession("");
+      setPhone("");
+      setPassword("");
+      setAvatar(null);
+      alert("Account created successfully!");
+    } else {
+      console.log("Please fix the errors before submitting.");
     }
-    if (password === username) {
-      alert("Password cannot be the same as user name.");
-      return;
-    }
-
-    if (password === email) {
-      alert("Password cannot be the same as email.");
-      return;
-    }
-
-    const user = {
-      name,
-      username,
-      email,
-      profession,
-      phone,
-      password,
-      avatar,
-      id: Date.now(),
-    };
-
-    setUserDetails([...userDetails, user]);
-
-    setName("");
-    setUsername("");
-    setEmail("");
-    setProfession("");
-    setPhone("");
-    setPassword("");
-    setAvatar(null);
   };
 
   useEffect(() => {
@@ -61,124 +100,100 @@ function SignUpForm() {
 
   return (
     <div>
-      <div
-        className="form-container"
-        style={{ justifyContent: "center", marginTop: "6em" }}
-      >
-        <h2 style={{ textAlign: "center" }}>Create Account</h2>
+      <div className="form-container">
+        <h2 className="form-title">Create Account</h2>
         <form onSubmit={handleSubmit}>
-          <div style={{ textAlign: "center", marginBottom: "20px" }}>
+          <div className="avatar-container">
             <label htmlFor="avatar">
               {avatar ? (
                 <img
                   src={URL.createObjectURL(avatar)}
                   alt="Avatar"
-                  style={{
-                    width: "100px",
-                    height: "100px",
-                    borderRadius: "50%",
-                  }}
+                  className="avatar-image"
                 />
               ) : (
-                <div
-                  style={{
-                    width: "100px",
-                    height: "100px",
-                    backgroundColor: "#f0f0f0",
-                    borderRadius: "50%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    overflow: "hidden",
-                  }}
-                >
-                  <span style={{ color: "#777777", fontSize: "24px" }}>
-                    <i
-                      className="fa fa-user-circle-o"
-                      aria-hidden="true"
-                      style={{ fontSize: "150px", color: "#777777" }}
-                    ></i>
-                  </span>
+                <div className="avatar-placeholder">
+                  <i className="fa fa-user-circle-o avatar-icon"></i>
                 </div>
               )}
             </label>
-            <input
+            <Input
               type="file"
               id="avatar"
               name="avatar"
               accept="image/*"
-              style={{ display: "none" }}
+              className="avatar-input"
               onChange={handleAvatarChange}
             />
           </div>
-          <input
+
+          <Input
             type="text"
             name="full_name"
-            className="form-input"
+            className={`form-input ${error.name ? "border-error" : ""}`}
             placeholder="Full name"
-            required
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <input
+          <Input
             type="text"
             name="username"
-            className="form-input"
+            className={`form-input ${error.username ? "border-error" : ""}`}
             placeholder="Username"
-            required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <input
+
+          <Input
             type="email"
             name="email"
-            className="form-input"
+            className={`form-input ${error.email ? "border-error" : ""}`}
             placeholder="Email"
-            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
-            type="Profession"
-            name="Profession"
-            className="form-input"
+
+          <Input
+            type="text"
+            name="profession"
+            className={`form-input ${error.profession ? "border-error" : ""}`}
             placeholder="Profession"
-            required
             value={profession}
             onChange={(e) => setProfession(e.target.value)}
           />
-          <input
+
+          <Input
             type="number"
             name="phone"
-            className="form-input"
+            className={`form-input ${error.phone ? "border-error" : ""}`}
             placeholder="Phone number"
-            required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
-          <input
+
+          <Input
             type="password"
             name="password"
-            className="form-input"
+            className={`form-input ${error.password ? "border-error" : ""}`}
             placeholder="Password"
-            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-
-          <p style={{ fontSize: "14px", color: "#777777" }}>
-            Your password must:
-          </p>
-          <ul style={{ fontSize: "14px", color: "#777777" }}>
-            <li>Be at least 6 characters long</li>
-            <li>Not be the same as your username or email</li>
-          </ul>
-          <button type="submit" className="form-button">
+          <div className="password_critarias">
+            <p className="password-requirements">Your password must:</p>
+            <ul className="password-requirements-list">
+              <li>Be at least 6 characters long</li>
+              <li>Not be the same as your username</li>
+              <li>Not be the same as your email</li>
+            </ul>
+          </div>
+          <Button type="submit" className="form-button">
             Join the community
-          </button>
+          </Button>
+
           <p className="form-footer">
             Already have an account?{" "}
-            <Link to="/Login" style={{ color: "#007bff" }}>
+            <Link to="/Login" className="login-link">
               Login
             </Link>
           </p>
@@ -186,6 +201,6 @@ function SignUpForm() {
       </div>
     </div>
   );
-}
+};
 
 export default SignUpForm;
