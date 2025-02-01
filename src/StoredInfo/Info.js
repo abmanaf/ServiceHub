@@ -3,7 +3,6 @@ import React from "react";
 function Info({ storedUsers, userDetails }) {
   return (
     <div>
-      {" "}
       <div>
         <table className="table">
           <thead className="table-dark">
